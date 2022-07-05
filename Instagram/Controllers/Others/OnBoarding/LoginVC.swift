@@ -7,10 +7,11 @@
 
 import UIKit
 import SafariServices
+struct Constants{
+    static let cornerRadius = 8.0
+}
 class LoginVC: UIViewController {
-    struct Constants{
-        static let cornerRadius = 8.0
-    }
+
     private var userNameEmailTF : UITextField = {
         let field = UITextField()
         field.returnKeyType = .next
@@ -151,6 +152,29 @@ class LoginVC: UIViewController {
         
         //login functionality
         
+        var userName:String?
+        var email:String?
+        if  usernameEmail.contains("@"),usernameEmail.contains(".") {
+            email = usernameEmail
+        }else{
+            userName = usernameEmail
+        }
+        
+        AuthManager.shared.userLogin(userName: userName, email: email, password: password) { isSuccess in
+            
+            DispatchQueue.main.async {
+                if isSuccess{
+                    self.dismiss(animated: true)
+                }else{
+                    
+                    let alert = UIAlertController(title: "Log In Error", message: "We were unable to log you in", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+                    self.present(alert, animated: true)
+                }
+            }
+     
+        }
+        
     }
     @objc private func didTappedtermsBtn(){
         guard let url = URL(string: "https://help.instagram.com/581066165581870") else{return}
@@ -165,8 +189,13 @@ class LoginVC: UIViewController {
     @objc private func didTappedCreateAccountBtn(){
         
         let vc = RegistrationVC()
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true)
+        vc.title = "Create Account"
+        
+        let root = UINavigationController(rootViewController: vc)
+        
+       // root.modalPresentationStyle = .fullScreen
+        
+        self.present(root, animated: true)
         
     }
 }
