@@ -96,7 +96,7 @@ class RegistrationVC: UIViewController {
     }
     
     @objc func didTappedRegisterUserBtn(){
-        print("didTappedRegisterUserBtn")
+
         userNameTF.resignFirstResponder()
         emailTF.resignFirstResponder()
         passwordTF.resignFirstResponder()
@@ -104,6 +104,23 @@ class RegistrationVC: UIViewController {
         guard let email = emailTF.text,!email.isEmpty,
               let  password = passwordTF.text,!password.isEmpty, password.count >= 8,
               let username = userNameTF.text, !username.isEmpty else {return}
+        
+        AuthManager.shared.registerUser(userName: username, email: email, password: password) { success in
+            DispatchQueue.main.async {
+                if success{
+                    self.dismiss(animated: true)
+
+                    print("success")
+                    
+                }else{
+                    print("Error occured")
+                    let alert = UIAlertController(title: "Error in signup", message: "We were unable to sign you up", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+                    self.present(alert, animated: true)
+                }
+            }
+      
+        }
 
     }
 

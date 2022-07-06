@@ -6,9 +6,11 @@ public class AuthManager{
     static let shared = AuthManager()
     
     func registerUser(userName:String,email:String,password:String,comletion:@escaping (Bool)->Void){
-        
+        print(userName,email,password)
         DatabaseManager.shared.canCreateUser(with: email, username: userName) { canCreate in
+            print(canCreate)
             if canCreate{
+                
                 Auth.auth().createUser(withEmail: email, password: password){ result,error in
                     
                     guard  error == nil,result != nil else {
@@ -35,7 +37,6 @@ public class AuthManager{
     }
     
     func userLogin(userName:String?,email:String?,password:String,completion:@escaping (Bool)->Void){
-        print(userName,email,password)
         if let email = email {
             
             Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
@@ -48,6 +49,20 @@ public class AuthManager{
             }
         }else if let userName = userName {
             
+        }
+    }
+    
+    
+    func logOut(completion:@escaping(Bool)->Void){
+        do{
+            try Auth.auth().signOut()
+            completion(true)
+            return
+        }catch{
+            print(error.localizedDescription)
+            completion(false)
+            return
+
         }
     }
 }

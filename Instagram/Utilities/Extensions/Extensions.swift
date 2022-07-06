@@ -1,9 +1,3 @@
-//
-//  Extensions.swift
-//  Instagram
-//
-//  Created by Genusys Inc on 7/5/22.
-//
 
 import Foundation
 
@@ -29,5 +23,13 @@ extension UIView{
     }
     public var bottom:CGFloat{
         return frame.origin.y + frame.size.height
+    }
+}
+
+
+extension String{
+    
+    func makeFirebaseDatabaseKey()->String{
+        return self.replacingOccurrences(of: "@", with: "-").replacingOccurrences(of: ".", with: "-")
     }
 }

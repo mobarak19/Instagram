@@ -11,13 +11,13 @@
         <!--Tab Bar Controller-->
         <scene sceneID="iyn-Xb-fPs">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="w4A-JV-UPQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tabBarController id="Vfa-zg-NYt" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sIf-3w-Nu2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                        <color key="tintColor" systemColor="labelColor"/>
+                        <color key="selectedImageTintColor" systemColor="labelColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="Sqt-Rg-8EC" kind="relationship" relationship="viewControllers" id="T04-Eu-OcI"/>
@@ -27,6 +27,7 @@
                         <segue destination="uRD-wd-gTx" kind="relationship" relationship="viewControllers" id="Kf0-hT-L7Y"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w4A-JV-UPQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-975" y="-341"/>
         </scene>
@@ -34,10 +35,11 @@
         <scene sceneID="8w0-67-0hT">
             <objects>
                 <navigationController id="iBT-F7-2KS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="globe" catalog="system" id="zdh-kI-gpm"/>
+                    <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" id="zdh-kI-gpm"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="c8T-dR-aYs">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <connections>
                         <segue destination="Hbu-eo-sDM" kind="relationship" relationship="rootViewController" id="hpV-Bj-A2g"/>
@@ -85,10 +87,11 @@
         <scene sceneID="zJB-5N-z9e">
             <objects>
                 <navigationController id="gya-cZ-n8n" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="bell" catalog="system" id="tNG-Ma-hCx"/>
+                    <tabBarItem key="tabBarItem" title="" image="heart" catalog="system" id="tNG-Ma-hCx"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kIe-bt-iU1">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <connections>
                         <segue destination="hIB-Ih-XYR" kind="relationship" relationship="rootViewController" id="LZA-00-RsM"/>
@@ -197,11 +200,17 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bell" catalog="system" width="128" height="124"/>
-        <image name="globe" catalog="system" width="128" height="121"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="house" catalog="system" width="128" height="106"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
