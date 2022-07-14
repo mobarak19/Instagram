@@ -11,7 +11,8 @@ class ExploreVC: UIViewController {
 
     private let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
-        searchBar.backgroundColor = .secondarySystemBackground
+        searchBar.backgroundColor = .systemBackground
+        searchBar.searchBarStyle = .minimal
         return searchBar
     } ()
     

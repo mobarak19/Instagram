@@ -32,6 +32,12 @@
 		205D49752874122D0071ACE3 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205D49742874122D0071ACE3 /* AuthManager.swift */; };
 		205D49772874134B0071ACE3 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205D49762874134B0071ACE3 /* StorageManager.swift */; };
 		205D497B287417E70071ACE3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205D497A287417E70071ACE3 /* Extensions.swift */; };
+		20C9C982287FD3CF00BD51BB /* IGFeedPostTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C9C981287FD3CF00BD51BB /* IGFeedPostTVC.swift */; };
+		20C9C985287FD4FE00BD51BB /* IGFeedPostHeaderTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C9C984287FD4FE00BD51BB /* IGFeedPostHeaderTVC.swift */; };
+		20C9C987287FD55700BD51BB /* IGFeedPostActionsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C9C986287FD55700BD51BB /* IGFeedPostActionsTVC.swift */; };
+		20C9C989287FD58100BD51BB /* IGFeedPostGeneralTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C9C988287FD58100BD51BB /* IGFeedPostGeneralTVC.swift */; };
+		20C9C98B287FD97300BD51BB /* UserPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C9C98A287FD97300BD51BB /* UserPost.swift */; };
+		20C9C98E287FDCC800BD51BB /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C9C98D287FDCC800BD51BB /* CustomError.swift */; };
 		3BAD1FDAAB1A49022088615D /* Pods_Instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 776B3840A441AAF5081599F7 /* Pods_Instagram.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +69,12 @@
 		205D49742874122D0071ACE3 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		205D49762874134B0071ACE3 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		205D497A287417E70071ACE3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		20C9C981287FD3CF00BD51BB /* IGFeedPostTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostTVC.swift; sourceTree = "<group>"; };
+		20C9C984287FD4FE00BD51BB /* IGFeedPostHeaderTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostHeaderTVC.swift; sourceTree = "<group>"; };
+		20C9C986287FD55700BD51BB /* IGFeedPostActionsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostActionsTVC.swift; sourceTree = "<group>"; };
+		20C9C988287FD58100BD51BB /* IGFeedPostGeneralTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostGeneralTVC.swift; sourceTree = "<group>"; };
+		20C9C98A287FD97300BD51BB /* UserPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPost.swift; sourceTree = "<group>"; };
+		20C9C98D287FDCC800BD51BB /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		776B3840A441AAF5081599F7 /* Pods_Instagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2896AB69FB857F5AAD92D99 /* Pods-Instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.debug.xcconfig"; path = "Target Support Files/Pods-Instagram/Pods-Instagram.debug.xcconfig"; sourceTree = "<group>"; };
 		AB547DFB5F1696173D515008 /* Pods-Instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.release.xcconfig"; path = "Target Support Files/Pods-Instagram/Pods-Instagram.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,8 +129,8 @@
 		205D49462873FC250071ACE3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				205D49382873F96C0071ACE3 /* Main.storyboard */,
-				205D493D2873F96E0071ACE3 /* LaunchScreen.storyboard */,
+				20C9C980287FD3A200BD51BB /* Cells */,
+				20C9C97F287FD39400BD51BB /* Storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -135,6 +147,7 @@
 		205D49482873FC3E0071ACE3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				20C9C98A287FD97300BD51BB /* UserPost.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -214,6 +227,7 @@
 		205D4978287417B80071ACE3 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				20C9C98C287FDCAD00BD51BB /* CustomError */,
 				205D4979287417D20071ACE3 /* Extensions */,
 			);
 			path = Utilities;
@@ -225,6 +239,42 @@
 				205D497A287417E70071ACE3 /* Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		20C9C97F287FD39400BD51BB /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				205D493D2873F96E0071ACE3 /* LaunchScreen.storyboard */,
+				205D49382873F96C0071ACE3 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		20C9C980287FD3A200BD51BB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				20C9C983287FD4B600BD51BB /* HomeCells */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		20C9C983287FD4B600BD51BB /* HomeCells */ = {
+			isa = PBXGroup;
+			children = (
+				20C9C981287FD3CF00BD51BB /* IGFeedPostTVC.swift */,
+				20C9C984287FD4FE00BD51BB /* IGFeedPostHeaderTVC.swift */,
+				20C9C986287FD55700BD51BB /* IGFeedPostActionsTVC.swift */,
+				20C9C988287FD58100BD51BB /* IGFeedPostGeneralTVC.swift */,
+			);
+			path = HomeCells;
+			sourceTree = "<group>";
+		};
+		20C9C98C287FDCAD00BD51BB /* CustomError */ = {
+			isa = PBXGroup;
+			children = (
+				20C9C98D287FDCC800BD51BB /* CustomError.swift */,
+			);
+			path = CustomError;
 			sourceTree = "<group>";
 		};
 		3C505A97BEC159172A1FD89D /* Frameworks */ = {
@@ -365,15 +415,21 @@
 				205D49332873F96C0071ACE3 /* AppDelegate.swift in Sources */,
 				205D49682873FDF80071ACE3 /* ProfileVC.swift in Sources */,
 				205D495A2873FD0F0071ACE3 /* SearchVC.swift in Sources */,
+				20C9C987287FD55700BD51BB /* IGFeedPostActionsTVC.swift in Sources */,
+				20C9C982287FD3CF00BD51BB /* IGFeedPostTVC.swift in Sources */,
 				205D49502873FCA90071ACE3 /* LoginVC.swift in Sources */,
 				205D49562873FCE20071ACE3 /* EditProfileVC.swift in Sources */,
 				205D49772874134B0071ACE3 /* StorageManager.swift in Sources */,
 				205D49662873FDE90071ACE3 /* CameraVC.swift in Sources */,
 				205D497328740F170071ACE3 /* DatabaseManager.swift in Sources */,
+				20C9C985287FD4FE00BD51BB /* IGFeedPostHeaderTVC.swift in Sources */,
 				205D49582873FCF80071ACE3 /* SettingsVC.swift in Sources */,
+				20C9C98E287FDCC800BD51BB /* CustomError.swift in Sources */,
 				205D496A2873FE5A0071ACE3 /* PostEditorVC.swift in Sources */,
 				205D49522873FCB80071ACE3 /* RegistrationVC.swift in Sources */,
+				20C9C98B287FD97300BD51BB /* UserPost.swift in Sources */,
 				205D497B287417E70071ACE3 /* Extensions.swift in Sources */,
+				20C9C989287FD58100BD51BB /* IGFeedPostGeneralTVC.swift in Sources */,
 				205D496C2873FE740071ACE3 /* PublishPostVC.swift in Sources */,
 				205D49602873FD800071ACE3 /* HomeVC.swift in Sources */,
 				205D49752874122D0071ACE3 /* AuthManager.swift in Sources */,
