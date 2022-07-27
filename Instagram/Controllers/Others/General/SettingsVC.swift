@@ -93,7 +93,7 @@ final class SettingsVC: UIViewController {
         let vc = EditProfileVC()
         vc.title = "Edit Profile"
         let navVC = UINavigationController(rootViewController: vc)
-       // navVC.modalPresentationStyle = .fullScreen
+        navVC.modalPresentationStyle = .fullScreen
         present(navVC, animated: true)
     }
     func didTappedInviteFriends(){

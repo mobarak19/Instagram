@@ -11,7 +11,7 @@ class EditProfileVC: UIViewController {
 
     private let tableView:UITableView = {
         let tableView = UITableView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(ProfileFormTVC.self, forCellReuseIdentifier: ProfileFormTVC.identifire)
         return tableView
     } ()
     
@@ -131,12 +131,28 @@ extension EditProfileVC:UITableViewDataSource{
         return models.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = models[indexPath.section][indexPath.row].label
+        let cell = tableView.dequeueReusableCell(withIdentifier: ProfileFormTVC.identifire, for: indexPath) as! ProfileFormTVC
+        
+        let model = models[indexPath.section][indexPath.row]
+        cell.configure(with: model)
+        cell.delegate = self
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard section == 1 else{
+            return nil
+        }
+        return "Private Information"
+    }
+    
+    
+}
+extension EditProfileVC:ProfileFormDelegate{
+    func formTableViewCell(_ cell: UITableViewCell, didUpdateField model: EditProfileItemModel) {
+        print(model.value)
+    }
     
     
 }
