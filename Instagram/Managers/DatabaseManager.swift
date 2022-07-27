@@ -5,7 +5,7 @@ import FirebaseDatabase
 
 class DatabaseManager{
     static let shared = DatabaseManager()
-    private let database = Database.database().reference()
+    private let database = Database.database().reference().child("instagram")
     func canCreateUser(with email:String,username:String,completion:@escaping (Bool)->Void){
         completion(true)
     }
