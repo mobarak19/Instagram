@@ -20,11 +20,15 @@ final class ProfileVC: UIViewController {
     }
     
     func configureCollectionView()  {
+        
         var layout = UICollectionViewFlowLayout()
+        
         layout.scrollDirection = .vertical
+        
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 
         layout.itemSize = CGSize(width: view.width/3, height: view.width/3)
+        
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
 
         guard let collectionView = collectionView else {
@@ -33,6 +37,7 @@ final class ProfileVC: UIViewController {
 
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.backgroundColor = .red
         view.addSubview(collectionView)
     }
     func configureNavigationBar(){

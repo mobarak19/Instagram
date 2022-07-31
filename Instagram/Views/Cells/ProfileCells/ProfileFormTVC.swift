@@ -16,6 +16,7 @@ class ProfileFormTVC: UITableViewCell {
 
  
     static let identifire = "ProfileFormTVC"
+    
     var delegate : ProfileFormDelegate?
     private let formLbl:UILabel = {
         let lbl = UILabel()
