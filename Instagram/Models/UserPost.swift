@@ -16,6 +16,7 @@ struct UserPost{
     let lineCount:[PostLike]
     let comments:[PostComment]
     let createdDate:Date
+    let taggedUsers:[User]
     
 }
 

@@ -10,7 +10,7 @@ import UIKit
 final class ProfileVC: UIViewController {
 
     private var collectionView :UICollectionView?
-    
+    private var userPosts = [UserPost]()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -71,18 +71,50 @@ final class ProfileVC: UIViewController {
 
 extension ProfileVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
 
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if section == 0{
+            return 0
+            
+        }
+       // return userPosts.count
         return 30
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCVC.identifire, for: indexPath) as! PhotoCVC
         cell.backgroundColor = .systemBlue
         cell.configure(debug: "nature")
+        //let model = userPosts[indexPath.row]
+       // cell.configure(with: model)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+        let vc = PostVC(model: nil)
+        vc.title = "Post"
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard kind == UICollectionView.elementKindSectionHeader else {
+            return UICollectionReusableView()
+        }
+        if indexPath.section == 1{
+            let tabControllHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ProfileTabRCVC.identifire, for: indexPath) as! ProfileTabRCVC
+            return tabControllHeader
+        }
+        let profileHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ProfileInfoHeaderRCVC.identifire, for: indexPath) as! ProfileInfoHeaderRCVC
+        return profileHeader
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if section == 0{
+            return CGSize(width: collectionView.width, height: collectionView.hieght/3)
+        }
+        return CGSize(width: collectionView.width, height: 65)
+    }
     
 }
