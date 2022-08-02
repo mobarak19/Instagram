@@ -43,7 +43,6 @@ final class ProfileVC: UIViewController {
 
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.backgroundColor = .red
         collectionView.register(PhotoCVC.self, forCellWithReuseIdentifier: PhotoCVC.identifire)
         
         collectionView.register(ProfileInfoHeaderRCVC.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProfileInfoHeaderRCVC.identifire)
@@ -107,6 +106,7 @@ extension ProfileVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollec
             return tabControllHeader
         }
         let profileHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ProfileInfoHeaderRCVC.identifire, for: indexPath) as! ProfileInfoHeaderRCVC
+        profileHeader.delegate = self
         return profileHeader
     }
     
@@ -116,5 +116,42 @@ extension ProfileVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollec
         }
         return CGSize(width: collectionView.width, height: 65)
     }
+    
+}
+
+extension ProfileVC:ProfileInfoHeaderRCVCDelegate{
+    func profileHeaderDidTapPostBtn(_ header: ProfileInfoHeaderRCVC) {
+        print("profileHeaderDidTapPostBtn")
+        collectionView?.scrollToItem(at: IndexPath(row: 0, section: 1), at: .top, animated: true)
+    }
+    
+    func profileHeaderDidTapFollowerBtn(_ header: ProfileInfoHeaderRCVC) {
+        print("profileHeaderDidTapFollowerBtn")
+        let vc = ListVC()
+        vc.title = "Follwers"
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
+
+    }
+    
+    func profileHeaderDidTapFollowingBtn(_ header: ProfileInfoHeaderRCVC) {
+        print("profileHeaderDidTapFollowingBtn")
+        let vc = ListVC()
+        vc.title = "Following"
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
+
+    }
+    
+    func profileHeaderDidTapEidtProfileBtn(_ header: ProfileInfoHeaderRCVC) {
+        print("profileHeaderDidTapEidtProfileBtn")
+        let vc = EditProfileVC()
+        vc.title = "Edit Profile"
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
+        present(nav, animated: true)
+
+    }
+    
     
 }
