@@ -49,8 +49,8 @@ class ProfileFormTVC: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        formLbl.frame = CGRect(x: 5, y: 0, width: contentView.width/3, height: contentView.hieght)
-        field.frame = CGRect(x: formLbl.right + 5, y: 0, width:(contentView.width - 10 - formLbl.width), height: contentView.hieght)
+        formLbl.frame = CGRect(x: 5, y: 0, width: contentView.width/3, height: contentView.height)
+        field.frame = CGRect(x: formLbl.right + 5, y: 0, width:(contentView.width - 10 - formLbl.width), height: contentView.height)
 
     }
     

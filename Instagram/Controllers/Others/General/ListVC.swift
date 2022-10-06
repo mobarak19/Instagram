@@ -9,7 +9,7 @@ import UIKit
 
 class ListVC: UIViewController {
 
-    private let data:[String]
+    private let data:[UserRelationship]
     
     private let tableView:UITableView  = {
         let tableView = UITableView()
@@ -17,7 +17,7 @@ class ListVC: UIViewController {
         return tableView
     }()
     
-    init(data:[String]){
+    init(data:[UserRelationship]){
         self.data = data
         super.init(nibName: nil, bundle: nil)
     }
@@ -39,7 +39,6 @@ class ListVC: UIViewController {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
     }
-
 }
 
 extension ListVC:UITableViewDelegate,UITableViewDataSource{
@@ -48,11 +47,24 @@ extension ListVC:UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:UserFollowTVC.identifire, for: indexPath) as! UserFollowTVC
-        cell.textLabel?.text = data[indexPath.row]
+        cell.configure(with: data[indexPath.row])
+        cell.delegate = self
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 65
+    }
+}
+
+extension ListVC : UserFollowTVCDelegate{
+    func didTapUnfollowBtn(_ model: UserRelationship) {
+        print("didTapUnfollowBtn")
+    }
+    
+    
 }

@@ -103,16 +103,16 @@ class LoginVC: UIViewController {
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        headerView.frame = CGRect(x: 0, y: view.top, width: view.width, height: view.hieght/3.0)
+        headerView.frame = CGRect(x: 0, y: view.top, width: view.width, height: view.height/3.0)
         userNameEmailTF.frame = CGRect(x: 25, y: headerView.bottom + 40, width: view.width - 50, height: 52.0)
         passwordTF.frame = CGRect(x: 25, y: userNameEmailTF.bottom + 10, width: view.width - 50, height: 52.0)
         
         loginBtn.frame = CGRect(x: 25, y: passwordTF.bottom + 10, width: view.width - 50, height: 52.0)
         createAccountBtn.frame = CGRect(x: 25, y: loginBtn.bottom + 10, width: view.width - 50, height: 52.0)
         
-        termsBtn.frame = CGRect(x: 10, y: view.hieght-view.safeAreaInsets.bottom - 100, width: view.width - 20, height: 50)
+        termsBtn.frame = CGRect(x: 10, y: view.height-view.safeAreaInsets.bottom - 100, width: view.width - 20, height: 50)
         
-        privacyBtn.frame = CGRect(x: 10, y: view.hieght-view.safeAreaInsets.bottom - 50, width: view.width - 20, height: 50)
+        privacyBtn.frame = CGRect(x: 10, y: view.height-view.safeAreaInsets.bottom - 50, width: view.width - 20, height: 50)
         
         configureHeaderView()
 
@@ -126,7 +126,7 @@ class LoginVC: UIViewController {
         let imageView = UIImageView(image: UIImage(named: "instagram"))
         headerView.addSubview(imageView)
         imageView.contentMode = .scaleAspectFit
-        imageView.frame = CGRect(x: headerView.width/4, y: view.safeAreaInsets.top, width: headerView.width/2, height: headerView.hieght - view.safeAreaInsets.top)
+        imageView.frame = CGRect(x: headerView.width/4, y: view.safeAreaInsets.top, width: headerView.width/2, height: headerView.height - view.safeAreaInsets.top)
     }
     
     private func addSubViews(){

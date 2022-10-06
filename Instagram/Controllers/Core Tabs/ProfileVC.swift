@@ -116,7 +116,7 @@ extension ProfileVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollec
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         if section == 0{
-            return CGSize(width: collectionView.width, height: collectionView.hieght/3)
+            return CGSize(width: collectionView.width, height: collectionView.height/3)
         }
         return CGSize(width: collectionView.width, height: 50)
     }
@@ -131,7 +131,12 @@ extension ProfileVC:ProfileInfoHeaderRCVCDelegate{
     
     func profileHeaderDidTapFollowerBtn(_ header: ProfileInfoHeaderRCVC) {
         print("profileHeaderDidTapFollowerBtn")
-        let vc = ListVC(data: ["joe","joe","joe","joe"])
+        var mockData = [UserRelationship]()
+        for x in 0..<10{
+            mockData.append(UserRelationship(username: "@joe", name: "Joe Smith", type: x % 2 == 0 ?.following : .not_following))
+        }
+        
+        let vc = ListVC(data: mockData)
         vc.title = "Follwers"
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
@@ -140,7 +145,11 @@ extension ProfileVC:ProfileInfoHeaderRCVCDelegate{
     
     func profileHeaderDidTapFollowingBtn(_ header: ProfileInfoHeaderRCVC) {
         print("profileHeaderDidTapFollowingBtn")
-        let vc = ListVC(data: ["joe","joe","joe","joe"])
+        var mockData = [UserRelationship]()
+        for x in 0..<10{
+            mockData.append(UserRelationship(username: "@joe", name: "Joe Smith", type: x % 2 == 0 ?.following : .not_following))
+        }
+        let vc = ListVC(data: mockData)
         vc.title = "Following"
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
