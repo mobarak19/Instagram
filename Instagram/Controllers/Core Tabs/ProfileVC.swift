@@ -13,10 +13,13 @@ final class ProfileVC: UIViewController {
     private var userPosts = [UserPost]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = .systemBackground
+        
         configureNavigationBar()
+        
         configureCollectionView()
-       
+        
     }
     
     func configureCollectionView()  {
@@ -103,6 +106,7 @@ extension ProfileVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollec
         }
         if indexPath.section == 1{
             let tabControllHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ProfileTabRCVC.identifire, for: indexPath) as! ProfileTabRCVC
+            tabControllHeader.delegate = self
             return tabControllHeader
         }
         let profileHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ProfileInfoHeaderRCVC.identifire, for: indexPath) as! ProfileInfoHeaderRCVC
@@ -114,7 +118,7 @@ extension ProfileVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollec
         if section == 0{
             return CGSize(width: collectionView.width, height: collectionView.hieght/3)
         }
-        return CGSize(width: collectionView.width, height: 65)
+        return CGSize(width: collectionView.width, height: 50)
     }
     
 }
@@ -127,7 +131,7 @@ extension ProfileVC:ProfileInfoHeaderRCVCDelegate{
     
     func profileHeaderDidTapFollowerBtn(_ header: ProfileInfoHeaderRCVC) {
         print("profileHeaderDidTapFollowerBtn")
-        let vc = ListVC()
+        let vc = ListVC(data: ["joe","joe","joe","joe"])
         vc.title = "Follwers"
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
@@ -136,7 +140,7 @@ extension ProfileVC:ProfileInfoHeaderRCVCDelegate{
     
     func profileHeaderDidTapFollowingBtn(_ header: ProfileInfoHeaderRCVC) {
         print("profileHeaderDidTapFollowingBtn")
-        let vc = ListVC()
+        let vc = ListVC(data: ["joe","joe","joe","joe"])
         vc.title = "Following"
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
@@ -150,6 +154,20 @@ extension ProfileVC:ProfileInfoHeaderRCVCDelegate{
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
         present(nav, animated: true)
+
+    }
+    
+    
+}
+
+
+extension ProfileVC:ProfileTabRCVCDelegate{
+    func didTapGridBtnTab() {
+        print("didTapGridBtnTab")
+    }
+    
+    func didTapTagBtnTab() {
+        print("didTapTagBtnTab")
 
     }
     

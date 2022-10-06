@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		200DAA7F28EE936D00518BF3 /* UserFollowTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200DAA7E28EE936D00518BF3 /* UserFollowTVC.swift */; };
 		205D49332873F96C0071ACE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205D49322873F96C0071ACE3 /* AppDelegate.swift */; };
 		205D49352873F96C0071ACE3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205D49342873F96C0071ACE3 /* SceneDelegate.swift */; };
 		205D493A2873F96C0071ACE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 205D49382873F96C0071ACE3 /* Main.storyboard */; };
@@ -47,10 +48,37 @@
 		20D33D50289783EE00D0D44B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D33D4F289783EE00D0D44B /* User.swift */; };
 		20D33D542897D51F00D0D44B /* SendSmsToNetworkByOperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D33D532897D51F00D0D44B /* SendSmsToNetworkByOperationQueue.swift */; };
 		20E263102892A58D00615EC9 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E2630F2892A58D00615EC9 /* Helpers.swift */; };
+		20FCCB5E289BE53000ABB3F3 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FCCB5D289BE53000ABB3F3 /* NotificationService.swift */; };
+		20FCCB62289BE53000ABB3F3 /* NotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 20FCCB5B289BE53000ABB3F3 /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3BAD1FDAAB1A49022088615D /* Pods_Instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 776B3840A441AAF5081599F7 /* Pods_Instagram.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		20FCCB60289BE53000ABB3F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 205D49272873F96C0071ACE3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20FCCB5A289BE53000ABB3F3;
+			remoteInfo = NotificationService;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		20FCCB63289BE53000ABB3F3 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				20FCCB62289BE53000ABB3F3 /* NotificationService.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		200DAA7E28EE936D00518BF3 /* UserFollowTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFollowTVC.swift; sourceTree = "<group>"; };
 		205D492F2873F96C0071ACE3 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		205D49322873F96C0071ACE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		205D49342873F96C0071ACE3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +121,9 @@
 		20D33D4F289783EE00D0D44B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		20D33D532897D51F00D0D44B /* SendSmsToNetworkByOperationQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendSmsToNetworkByOperationQueue.swift; sourceTree = "<group>"; };
 		20E2630F2892A58D00615EC9 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		20FCCB5B289BE53000ABB3F3 /* NotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		20FCCB5D289BE53000ABB3F3 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		20FCCB5F289BE53000ABB3F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		776B3840A441AAF5081599F7 /* Pods_Instagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2896AB69FB857F5AAD92D99 /* Pods-Instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.debug.xcconfig"; path = "Target Support Files/Pods-Instagram/Pods-Instagram.debug.xcconfig"; sourceTree = "<group>"; };
 		AB547DFB5F1696173D515008 /* Pods-Instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.release.xcconfig"; path = "Target Support Files/Pods-Instagram/Pods-Instagram.release.xcconfig"; sourceTree = "<group>"; };
@@ -107,6 +138,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		20FCCB58289BE53000ABB3F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -114,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				205D49312873F96C0071ACE3 /* Instagram */,
+				20FCCB5C289BE53000ABB3F3 /* NotificationService */,
 				205D49302873F96C0071ACE3 /* Products */,
 				631C958679E5BD2232CFD881 /* Pods */,
 				3C505A97BEC159172A1FD89D /* Frameworks */,
@@ -124,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				205D492F2873F96C0071ACE3 /* Instagram.app */,
+				20FCCB5B289BE53000ABB3F3 /* NotificationService.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -276,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				20B78A2D28910A7300736970 /* ProfileFormTVC.swift */,
+				200DAA7E28EE936D00518BF3 /* UserFollowTVC.swift */,
 			);
 			path = ProfileCells;
 			sourceTree = "<group>";
@@ -320,6 +361,15 @@
 			path = CustomError;
 			sourceTree = "<group>";
 		};
+		20FCCB5C289BE53000ABB3F3 /* NotificationService */ = {
+			isa = PBXGroup;
+			children = (
+				20FCCB5D289BE53000ABB3F3 /* NotificationService.swift */,
+				20FCCB5F289BE53000ABB3F3 /* Info.plist */,
+			);
+			path = NotificationService;
+			sourceTree = "<group>";
+		};
 		3C505A97BEC159172A1FD89D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,15 +399,34 @@
 				205D492C2873F96C0071ACE3 /* Frameworks */,
 				205D492D2873F96C0071ACE3 /* Resources */,
 				E7761E3017BBE390837725E5 /* [CP] Embed Pods Frameworks */,
+				20FCCB63289BE53000ABB3F3 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				20FCCB61289BE53000ABB3F3 /* PBXTargetDependency */,
 			);
 			name = Instagram;
 			productName = Instagram;
 			productReference = 205D492F2873F96C0071ACE3 /* Instagram.app */;
 			productType = "com.apple.product-type.application";
+		};
+		20FCCB5A289BE53000ABB3F3 /* NotificationService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20FCCB66289BE53000ABB3F3 /* Build configuration list for PBXNativeTarget "NotificationService" */;
+			buildPhases = (
+				20FCCB57289BE53000ABB3F3 /* Sources */,
+				20FCCB58289BE53000ABB3F3 /* Frameworks */,
+				20FCCB59289BE53000ABB3F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NotificationService;
+			productName = NotificationService;
+			productReference = 20FCCB5B289BE53000ABB3F3 /* NotificationService.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -370,6 +439,9 @@
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
 					205D492E2873F96C0071ACE3 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+					20FCCB5A289BE53000ABB3F3 = {
 						CreatedOnToolsVersion = 13.3.1;
 					};
 				};
@@ -388,6 +460,7 @@
 			projectRoot = "";
 			targets = (
 				205D492E2873F96C0071ACE3 /* Instagram */,
+				20FCCB5A289BE53000ABB3F3 /* NotificationService */,
 			);
 		};
 /* End PBXProject section */
@@ -401,6 +474,13 @@
 				205D496E287408690071ACE3 /* GoogleService-Info.plist in Resources */,
 				205D493C2873F96E0071ACE3 /* Assets.xcassets in Resources */,
 				205D493A2873F96C0071ACE3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20FCCB59289BE53000ABB3F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +547,7 @@
 				205D49772874134B0071ACE3 /* StorageManager.swift in Sources */,
 				205D49662873FDE90071ACE3 /* CameraVC.swift in Sources */,
 				20B5ECA02890EDEF004B3F56 /* Constants.swift in Sources */,
+				200DAA7F28EE936D00518BF3 /* UserFollowTVC.swift in Sources */,
 				20D33D50289783EE00D0D44B /* User.swift in Sources */,
 				205D497328740F170071ACE3 /* DatabaseManager.swift in Sources */,
 				20C9C985287FD4FE00BD51BB /* IGFeedPostHeaderTVC.swift in Sources */,
@@ -492,7 +573,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		20FCCB57289BE53000ABB3F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20FCCB5E289BE53000ABB3F3 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		20FCCB61289BE53000ABB3F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 20FCCB5A289BE53000ABB3F3 /* NotificationService */;
+			targetProxy = 20FCCB60289BE53000ABB3F3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		205D49382873F96C0071ACE3 /* Main.storyboard */ = {
@@ -632,6 +729,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A2896AB69FB857F5AAD92D99 /* Pods-Instagram.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -661,6 +759,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AB547DFB5F1696173D515008 /* Pods-Instagram.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -686,6 +785,56 @@
 			};
 			name = Release;
 		};
+		20FCCB64289BE53000ABB3F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FFKH5FAH95;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotificationService/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NotificationService;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cse.mobarak.Instagram.NotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		20FCCB65289BE53000ABB3F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FFKH5FAH95;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotificationService/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NotificationService;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cse.mobarak.Instagram.NotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -703,6 +852,15 @@
 			buildConfigurations = (
 				205D49442873F96E0071ACE3 /* Debug */,
 				205D49452873F96E0071ACE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20FCCB66289BE53000ABB3F3 /* Build configuration list for PBXNativeTarget "NotificationService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20FCCB64289BE53000ABB3F3 /* Debug */,
+				20FCCB65289BE53000ABB3F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
