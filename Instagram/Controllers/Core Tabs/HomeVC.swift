@@ -9,9 +9,12 @@ import UIKit
 import FirebaseAuth
 class HomeVC: UIViewController {
     private var tableView:UITableView = {
-        let table = UITableView()
-        table.register(IGFeedPostTVC.self, forCellReuseIdentifier: IGFeedPostTVC.identifire)
-        return table
+        let tableView = UITableView()
+        tableView.register(IGFeedPostTVC.self, forCellReuseIdentifier: IGFeedPostTVC.identifire)
+        tableView.register(IGFeedPostHeaderTVC.self, forCellReuseIdentifier: IGFeedPostHeaderTVC.identifire)
+        tableView.register(IGFeedPostActionsTVC.self, forCellReuseIdentifier: IGFeedPostActionsTVC.identifire)
+        tableView.register(IGFeedPostGeneralTVC.self, forCellReuseIdentifier: IGFeedPostGeneralTVC.identifire)
+        return tableView
     } ()
     
     override func viewDidLoad() {
@@ -25,7 +28,6 @@ class HomeVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         handleLoginStatus()
-
     }
 
     override func viewDidLayoutSubviews() {

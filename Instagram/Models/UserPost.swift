@@ -1,9 +1,9 @@
 
 import Foundation
 
-enum UserPostType{
-    
-    case photo, video
+enum UserPostType:String{
+    case photo = "Photo"
+    case video = "Video"
 }
 
 struct UserPost{
@@ -17,6 +17,7 @@ struct UserPost{
     let comments:[PostComment]
     let createdDate:Date
     let taggedUsers:[User]
+    let owner:User
     
 }
 

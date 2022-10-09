@@ -43,7 +43,7 @@ final class NotificationVC: UIViewController {
     
     func fetchNotification(){
         for x in 0..<100{
-            let model = UserNotification(type: x % 2 == 0 ? .like(post: UserPost(identifire: "1", postType: .photo, thumbnilImage: URL(string: "https://t4.ftcdn.net/jpg/03/16/04/19/240_F_316041918_NP4INHO1kxzQvifLqQO5zln3HgMfaEZo.jpg")!, postURL: URL(string: "https://t4.ftcdn.net/jpg/03/16/04/19/240_F_316041918_NP4INHO1kxzQvifLqQO5zln3HgMfaEZo.jpg")!, caption: "caption", lineCount: [], comments: [], createdDate: Date(), taggedUsers: [])) : .follow(state:  x % 2 == 0 ? .following : .not_following), text: "Hello world", user: User(username: "Joe", bio: "", name: (first: "Joe", last: "Smith"), birthDate: Date(), gender: .male, counts: UserCount(followers: 1, following: 1, posts: 1), joindDate: Date(), profilePhoto: URL(string: "https://t4.ftcdn.net/jpg/03/16/04/19/240_F_316041918_NP4INHO1kxzQvifLqQO5zln3HgMfaEZo.jpg")!))
+            let model = UserNotification(type: x % 3 == 0 ? .like(post: UserPost(identifire: "1", postType: .photo, thumbnilImage: URL(string: "https://t4.ftcdn.net/jpg/03/16/04/19/240_F_316041918_NP4INHO1kxzQvifLqQO5zln3HgMfaEZo.jpg")!, postURL: URL(string: "https://t4.ftcdn.net/jpg/03/16/04/19/240_F_316041918_NP4INHO1kxzQvifLqQO5zln3HgMfaEZo.jpg")!, caption: "caption", lineCount: [], comments: [], createdDate: Date(), taggedUsers: [], owner: User(username: "", bio: "", name: (first: "", last: ""), birthDate: Date(), gender: .male, counts: UserCount(followers: 1, following: 1, posts: 1), joindDate: Date(), profilePhoto: URL(string: "http://google.com")!))) : .follow(state:  x % 2 == 0 ? .following : .not_following), text: "Hello world", user: User(username: "Joe", bio: "", name: (first: "Joe", last: "Smith"), birthDate: Date(), gender: .male, counts: UserCount(followers: 1, following: 1, posts: 1), joindDate: Date(), profilePhoto: URL(string: "https://t4.ftcdn.net/jpg/03/16/04/19/240_F_316041918_NP4INHO1kxzQvifLqQO5zln3HgMfaEZo.jpg")!))
             models.append(model)
 
         }
@@ -100,6 +100,15 @@ extension NotificationVC:UITableViewDelegate,UITableViewDataSource{
 extension NotificationVC:NotificationLikeEventTVCDelegate,NotificationFollowEventTVCDelegate{
     func didTapLikeBtn(model: UserNotification) {
         print("didTapLikeBtn")
+        switch model.type{
+        case .like(post: let post):
+            let vc = PostVC(model: post)
+            vc.title = post.postType.rawValue
+            vc.navigationItem.largeTitleDisplayMode = .never
+            navigationController?.pushViewController(vc, animated: true)
+        case .follow(state: _):
+            fatalError("Dev issue: should not call")
+        }
     }
 
     
