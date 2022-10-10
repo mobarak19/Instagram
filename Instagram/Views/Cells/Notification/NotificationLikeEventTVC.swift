@@ -19,7 +19,7 @@ class NotificationLikeEventTVC: UITableViewCell {
 
     public weak var delegate:NotificationLikeEventTVCDelegate?
     
-    private let profileImageView : UIImageView = {
+     let profileImageView : UIImageView = {
         let imageView = UIImageView()
         imageView.layer.masksToBounds = true
         imageView.contentMode = .scaleAspectFill
@@ -51,7 +51,6 @@ class NotificationLikeEventTVC: UITableViewCell {
         contentView.addSubview(label)
         postBtn.addTarget(self, action: #selector(onTappPostBtn), for: .touchUpInside)
         selectionStyle = .none
-
     }
     
     @objc func onTappPostBtn(){
@@ -64,13 +63,29 @@ class NotificationLikeEventTVC: UITableViewCell {
     public func configure(with model:UserNotification){
         self.model = model
         self.label.text = model.text
-        self.profileImageView.sd_setImage(with: model.user.profilePhoto)
+       // self.profileImageView.sd_setImage(with: model.user.profilePhoto)
         switch model.type{
         case .like(post: let post):
             let thumbnail = post.thumbnilImage
             postBtn.sd_setBackgroundImage(with: thumbnail, for: .normal)
         case .follow:
             break
+        }
+        
+        let lblNameInitialize = UILabel()
+        lblNameInitialize.frame.size = CGSize(width: 50.0, height: 50.0)
+        lblNameInitialize.textColor = UIColor.white
+        lblNameInitialize.font = lblNameInitialize.font.withSize(25)
+        lblNameInitialize.text = "M"
+        lblNameInitialize.textAlignment = NSTextAlignment.center
+        lblNameInitialize.backgroundColor = UIColor.init(displayP3Red: 0.77, green: 0.89, blue:0.96 , alpha: 1.00)
+        
+        UIGraphicsBeginImageContext(lblNameInitialize.frame.size)
+        
+        lblNameInitialize.layer.render(in: UIGraphicsGetCurrentContext()!)
+        
+        DispatchQueue.main.async {
+            self.profileImageView.image = UIGraphicsGetImageFromCurrentImageContext()
         }
     }
     

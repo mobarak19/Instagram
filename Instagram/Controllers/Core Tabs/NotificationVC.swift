@@ -81,6 +81,7 @@ extension NotificationVC:UITableViewDelegate,UITableViewDataSource{
             let cell = tableView.dequeueReusableCell(withIdentifier: NotificationLikeEventTVC.identifire, for: indexPath) as! NotificationLikeEventTVC
             cell.configure(with: model)
             cell.delegate = self
+
             return cell
         case .follow:
             let cell = tableView.dequeueReusableCell(withIdentifier: NotificationFollowEventTVC.identifire, for: indexPath) as! NotificationFollowEventTVC
